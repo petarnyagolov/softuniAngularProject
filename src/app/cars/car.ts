@@ -1,14 +1,14 @@
 export class Car {
-    title: string;
-    author : string;
+    type: string;
+    model : string;
     price : number;
-    publishedOn : Date;
+    img? : string;
 
-    constructor(title : string, author : string, price : number, publishedOn : Date){
-        this.title = title;
-        this.author=author;
+    constructor(type : string, model : string, price : number, img : string){
+        this.type = type;
+        this.model=model;
         this.price = price;
-        this.publishedOn=publishedOn;
+        this.img=img;
         
     }
 }
