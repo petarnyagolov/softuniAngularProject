@@ -8,15 +8,16 @@ import {Component} from '@angular/core';
 })
 
 export class CarsFormComponent {
-    public type : string[];
+    public types : string[];
     public model : string;
     public price: number; 
     public img?: string;
 
     constructor(){
-        this.type=["Children Car","Real Car","Souvenir Car"];
-        this.model="e46";
-        this.price = 5;
+        this.types=["Children Car","Real Car","Souvenir Car"];
+        console.log(this.types);
+        this.model="";
+        this.price = 0;
         this.img="https://cdn.shopify.com/s/files/1/0154/5079/products/IMG3032_3_1024x1024.jpg?v=1437630399";
         
     }

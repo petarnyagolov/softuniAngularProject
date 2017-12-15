@@ -10,29 +10,38 @@
 			    			<div class="row">
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			                <input [(ngModel)]="user.firstName" type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
+							<input #firstName="ngModel" [(ngModel)]="user.firstName" type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name" required minlength="5"
+							maxlength="8">
+							<div [hidden]="firstName.valid || firstName.pristine && firstName.untouched" class="alert alert-danger">
+									<div [hidden]="!firstName.hasError('required')">firstName is required</div>
+									<div [hidden]="!firstName.hasError('minlength')">firstName's length must be at least 5 symbols</div>
+								  </div>
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input [(ngModel)]="user.lastName" type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+										<input #lastName="ngModel" [(ngModel)]="user.lastName" type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+										<div [hidden]="firstName.valid || firstName.pristine && firstName.untouched" class="alert alert-danger">
+												<div [hidden]="!firstName.hasError('required')">firstName is required</div>
+												<div [hidden]="!firstName.hasError('minlength')">firstName's length must be at least 5 symbols</div>
+											  </div>
 			    					</div>
 			    				</div>
 			    			</div>
 
 			    			<div class="form-group">
-			    				<input [(ngModel)]="user.email" type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+			    				<input #email="ngModel" [(ngModel)]="user.email" type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
 			    			</div>
 
 			    			<div class="row">
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input [(ngModel)]="user.password" type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+			    						<input #password="ngModel" [(ngModel)]="user.password" type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input [(ngModel)]="user.confirmPassword" type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+			    						<input #confirmPassword="ngModel" [(ngModel)]="user.confirmPassword" type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
 			    					</div>
 			    				</div>
 			    			</div>
